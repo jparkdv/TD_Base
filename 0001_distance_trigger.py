@@ -1,5 +1,5 @@
-# 사람이 작품 앞에 다가왔을 때 반응하는 가장 기초적인 인터랙션 시스템을 구축합니다.
-# Build the most basic interaction system that reacts when someone approaches the artwork.
+# 관객의 거리에 반응하는 기초 인터랙션 시스템을 구축합니다.
+# Build a foundational interaction system that responds to audience proximity.
 
 # Scenario
 # 전시장에 인터랙티브 미디어아트 작품을 설치.

@@ -1,5 +1,5 @@
-# 시간과 전원 상태를 동시에 고려하는 복합 조건문을 설계하세요.
-# Design a complex conditional statement that considers both time and power status.
+# 전시관의 운영 시간 및 요일을 자동으로 감지하는 스케줄링 로직을 설계합니다.
+# Design a scheduling logic to automatically detect gallery operating hours and days.
 
 # Scenario
 # 전시장 내 시스템을 자동화. 작품은 다음 두가지의 조건이 모두 충족될 때만 작동.
