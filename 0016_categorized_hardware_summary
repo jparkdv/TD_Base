@@ -1,0 +1,26 @@
+# 카테고리별로 장비를 분류하고 수량을 파악하는 리포트 시스템을 구축합니다.
+
+hardware_db = {
+    "Sony_A7": "Camera",
+    "Lidar_01": "Sensor",
+    "Projector_Main": "Display",
+    "Ultrasonic_01": "Sensor",
+    "Kinect_V2": "Sensor"
+}
+
+def summarize_by_category(db, target_category):
+    category_items = []
+    count = 0
+    
+
+    for name, category in db.items():
+        if category == target_category:
+            category_items.append(name)
+            count += 1
+            
+
+    print(f"--- 📊 Category Summary: {target_category} ---")
+    print(f"Total Count: {count}")
+    print(f"Device List: {category_items}")
+
+summarize_by_category(hardware_db, "Sensor")
