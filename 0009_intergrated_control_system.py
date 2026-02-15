@@ -16,9 +16,9 @@ battery_level = 15
 
 def master_control(emergency_status, privacy_mode, battery_level):
     if emergency_status:
-        print("CRITICAL: Emergency Stop!"
+        print("CRITICAL: Emergency Stop!")
     elif privacy_mode:
-        print("Privacy Active: Cameras OFF"
+        print("Privacy Active: Cameras OFF")
     elif battery_level < 20:
         print("Low Battery: Saving Mode")
     else:
