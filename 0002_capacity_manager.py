@@ -1,17 +1,29 @@
-# 전시장 내 실시간 인원을 관리하여 공간이 수용할 수 있는 한계치를 넘지 않도록 자동으로 통제하는 시스템
+# 0002_capacity_manager.py
+# 목적: 전시장 수용 인원 모니터링 및 실시간 입장 통제 시스템 구현
+# -------------------------------------------------------
+# Scenario:
+# - 관객의 안전과 쾌적한 관람 환경을 위해 전시장 내 실시간 인원을 관리함.
+# - 최대 수용 인원(max_capacity)을 초과할 경우, 자동으로 입장을 차단하여 과밀 방지.
+# - 센서로부터 전달받은 현재 인원(current_visitors)을 기준으로 시스템이 판단함.
+#
+# Requirements:
+# - 현재 관객 수 및 최대 수용 인원 변수 정의 (Integer Type)
+# - 비교 연산자(>)를 사용하여 임계값 초과 여부 판별
+# - 상황에 따른 입장 승인/거부 로직을 담은 관리 함수(manage_capacity) 설계
+# -------------------------------------------------------
 
-# Scenario
-# 현재 전시장 안에 있는 관객 수(current_visitors)를 정수형 변수로 설정할 것.
-# 전시장이 수용 가능한 최대 인원(max_capacity)을 10명으로 제한할 것.
-# 만약(if) 현재 인원이 최대치를 초과(>)하면 입장을 거부(deny_entry)하고, 그렇지 않으면 허용(allow_entry)하는 로직을 함수로 구현할 것.
+# 1. 시스템 설정 (System Configuration)
+current_visitors = 12  # 실시간 탐지된 현재 관람객 수
+max_capacity = 10      # 전시 공간의 안전 수용 한계치
 
-current_visitors = 12
-max_capacity = 10
-
-def manage_capacity(current_visitors, max_capacity):
-    if current_visitors > max_capacity:
+# 2. 인원 제어 엔진 (Capacity Control Engine)
+def manage_capacity(visitors, limit):
+    if visitors > limit:
+        # 수용 한계를 초과했을 때의 입장 제한 액션
         print("manage_capacity('deny_entry')")
     else:
+        # 안전 범위 내에서 입장을 허용하는 액션
         print("manage_capacity('allow_entry')")
 
+# 3. 운영 모드 실행 (Operational Mode)
 manage_capacity(current_visitors, max_capacity)

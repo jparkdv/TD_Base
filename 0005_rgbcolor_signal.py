@@ -1,18 +1,35 @@
-# 현재 시스템의 상태(정상, 경고 등)를 입력받아, 그에 맞는 RGB 색상 데이터를 출력한다.
+# 0005_rgbcolor_signal.py
+# 목적: 시스템 상태 모니터링에 따른 실시간 RGB LED 색상 신호 매핑 구현
+# -------------------------------------------------------
+# Scenario:
+# - 통합 관제 시스템의 현재 상태(system_status)를 시각적인 색상 데이터로 변환함.
+# - 정상(Normal), 경고(Warning), 오류(Error) 등 각 단계에 최적화된 RGB 값을 할당함.
+# - 정의되지 않은 상태값이 들어올 경우, 기본값(White)을 출력하여 시스템의 상시 가동 확인.
+#
+# Requirements:
+# - 시스템 상태 문자열 변수 정의 및 초기화
+# - if-elif-else 다중 조건문을 활용한 상태별 로직 분기
+# - RGB 튜플(Tuple) 구조를 활용한 색상 데이터 출력 함수(set_rgb_color) 설계
+# -------------------------------------------------------
 
-# Scenario
-# 시스템의 상태를 나타내는 변수(system_status)를 설정할 것.
-# 함수를 정의할 때 상태 값을 전달받을 매개변수(status)를 괄호 안에 작성할 것.
-# if-elif-else를 사용하여 각 상태에 맞는 RGB 튜플(Tuple) 값을 결정하고 출력할 것.
+# 1. 상태 변수 설정 (Status Definition)
+system_status = "warning"  # 모니터링 중인 장비의 현재 상태
 
-system_status = "warning"
-
+# 2. 색상 신호 생성 엔진 (Color Signal Generation Engine)
 def set_rgb_color(status):
+    # 각 상태 문자열에 대응하는 RGB(Red, Green, Blue) 채널 값 할당
     if status == "normal":
-        print("set_rgb_color((0, 255, 0))")  # 녹색
+        # 안전/정상 상태: 녹색(Green) 출력
+        print("set_rgb_color((0, 255, 0))")
     elif status == "warning":
-        print("set_rgb_color((255, 255, 0))")  # 노란색
+        # 주의/경고 상태: 노란색(Yellow) 출력
+        print("set_rgb_color((255, 255, 0))")
     elif status == "error":
-        print("set_rgb_color((255, 0, 0))")  # 빨간색
+        # 위험/오류 상태: 빨간색(Red) 출력
+        print("set_rgb_color((255, 0, 0))")
     else:
-        print("set_rgb_color((255, 255, 255))")  # 흰색 (알 수 없는 상태)
+        # 알 수 없는 상태(Undefined): 흰색(White) 기본값 출력
+        print("set_rgb_color((255, 255, 255))")
+
+# 3. 디스플레이 업데이트 (Signal Execution)
+set_rgb_color(system_status)
