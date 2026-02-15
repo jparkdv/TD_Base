@@ -1,13 +1,13 @@
-# 장비 리스트를 알파벳 순으로 정렬하여 가독성 높은 목록을 만듭니다.
 
-unsorted_hardware = ["Projector", "Camera", "Sensor", "Display", "Audio_Interface"]
+# 1. 알파벳순 정렬: my_gear.sort()
+# 2. 결과 출력: print(my_gear)
+# 3. 순서 뒤집기: my_gear.reverse()
+# 4. 결과 출력: print(my_gear)
 
-def print_sorted_inventory(hardware_list):
-    sorted_list = sorted(hardware_list)
-    
-    print("--- 📋 Alphabetical Hardware List ---")
-    for index, item in enumerate(sorted_list, start=1):
-        print(f"{index}. {item}")
+my_gear = ["Projector", "Camera", "Sensor", "Audio", "Laptop"]
 
-# 정렬 시스템 가동
-print_sorted_inventory(unsorted_hardware)
+my_gear.sort()
+print("Sorted inventory:", my_gear)
+
+my_gear.reverse()
+print("Reversed inventory:", my_gear)

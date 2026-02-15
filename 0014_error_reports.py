@@ -1,25 +1,15 @@
-# 딕셔너리를 탐색하여 "Offline" 상태인 장비만 자동으로 추출해 리포트 리스트를 작성합니다.
+# for 반복문과 if 조건문을 결합하여 특정 조건에 맞는 데이터만 새로운 리스트에 수집한다.
 
-devices = {
-    "Camera": "Online",
-    "Sensor": "Offline",
-    "Display": "Online",
-    "Projector": "Offline"
-}
+#  - for 문을 사용하여 all_reports를 순회하세요.
+#  - if 문으로 "Error"인 항목만 찾으세요.
+#  - 찾은 항목을 error_list에 추가(.append)하세요.
+#  -  마지막에 error_list와 그 길이를 출력하세요.
 
-def generate_error_report(device_dict):
-    error_list = []
-    
-    for name, status in device_dict.items():
-        if status == "Offline":
-            error_list.append(name)
-            
-    print("--- 🛠️ Repair Required List ---")
-    if len(error_list) > 0:
-        for item in error_list:
-            print(f"- Target: {item}")
-        print(f"Total {len(error_list)} devices need attention.")
-    else:
-        print("All systems are green. No repairs needed!")
+all_reports = ["Normal", "Error", "Normal", "Error", "Warning"]
+error_list = []
 
-generate_error_report(devices)
+for report in all_reports:
+    if report == "Error":
+        error_list.append(report)
+        error_list.append(report)
+print(error_list, len(error_list))

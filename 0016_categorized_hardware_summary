@@ -1,26 +1,19 @@
-# 카테고리별로 장비를 분류하고 수량을 파악하는 리포트 시스템을 구축합니다.
+# 0016_categorized_hardware_summary.py
 
-hardware_db = {
-    "Sony_A7": "Camera",
-    "Lidar_01": "Sensor",
-    "Projector_Main": "Display",
-    "Ultrasonic_01": "Sensor",
-    "Kinect_V2": "Sensor"
-}
+# 1. for 문으로 all_hardware를 하나씩 꺼내세요.
+# 2. if 문과 'in'을 사용하여 그 장비가 output_devices에 포함되는지 확인하세요.
+# 3. 포함된다면 found_outputs에 추가하세요.
+# 4. 마지막에 결과를 출력하세요.
 
-def summarize_by_category(db, target_category):
-    category_items = []
-    count = 0
-    
 
-    for name, category in db.items():
-        if category == target_category:
-            category_items.append(name)
-            count += 1
-            
+all_hardware = ["Projector", "Speaker", "Sensor", "Monitor", "LED_Wall"]
+output_devices = ["Projector", "Speaker", "Monitor", "LED_Wall"]
+found_outputs = []
 
-    print(f"--- 📊 Category Summary: {target_category} ---")
-    print(f"Total Count: {count}")
-    print(f"Device List: {category_items}")
+for device in all_hardware:
+    if device in output_devices:
+        found_outputs.append(device)
+    else:
+        print(f"{device} is not an output device.")
 
-summarize_by_category(hardware_db, "Sensor")
+print("Found output devices:", found_outputs)

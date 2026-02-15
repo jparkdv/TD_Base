@@ -1,19 +1,15 @@
-# 각 장비의 이름과 현재 상태를 지정하고 관리하는 시스템을 구축합니다.
+# for 반복문을 사용하여 리스트의 모든 데이터를 순서대로 하나씩 점검한다.
 
 # Scenario
+# 1. 상태 로그 리스트 생성: ["Normal", "Normal", "Error", "Warning", "Normal"]
+# 2. for 문을 사용하여 리스트의 각 항목(status)을 순회(Iteration).
+# 3. 만약(if) 현재 status가 "Error"라면 -> "ALERT: System Error Detected!" 출력.
+# 4. 그렇지 않다면(else) -> "System Status: [현재상태]" 형식으로 출력.
 
-devices = {
-    "Camera" : "Online",
-    "Sensor" : "Offline",
-    "Display" : "Online"
-    }
+status_log = ["Normal", "Normal", "Error", "Warning", "Normal"]
 
-def update_device(device_name, status):
-    devices[device_name] = status
-    print(f"update_device('{device_name}'is now '{status}')")
-
-def show_status():
-    for device, status in devices.items():
-        print(f"show_status('{device}': '{status}')")
-
-show_status()  
+for status in status_log:
+    if status == "Error":
+        print("ALERT: System Error Detected!")
+    else:
+        print(f"System Status: {status}")
