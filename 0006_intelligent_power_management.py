@@ -4,9 +4,9 @@
 # 현재 배터리 잔량(battery_level)을 정수형 변수로 설정할 것. (예: 15, 50, 90 등)
 # 함수를 정의할 때 배터리 잔량 값을 전달받을 매개변수(level)를 괄호 안에 작성할 것.
 # if-elif-else를 사용하여 배터리 잔량에 따른 모드를 출력할 것.
-# 1. 배터리가 80 초과(>)이면 "High Performance Mode"
-# 2. 배터리가 20 이상(>=) 80 이하(<=)이면 "Standard Mode"
-# 3. 그 외(20 미만)이면 "Power Saving Mode"
+#  - 배터리가 80 초과(>)이면 "High Performance Mode"
+#  - 배터리가 20 이상(>=) 80 이하(<=)이면 "Standard Mode"
+#  - 그 외(20 미만)이면 "Power Saving Mode"
 
 power_on = True
 battery_level = 15

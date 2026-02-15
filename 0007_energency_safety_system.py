@@ -6,9 +6,9 @@
 # 현재 시스템 모드(system_mode)를 문자열 변수로 설정할 것. (예: "Operation", "Maintenance" 등)
 # 함수(check_safety)를 정의할 때, 위 두 값을 전달받을 매개변수(emergency_status, mode)를 괄호 안에 작성할 것.
 # if-elif-else를 사용하여 안전 수칙을 구현할 것.
-# 1. [최우선] 만약 비상 상황(True)이라면 -> "EMERGENCY STOP! System Halted." 출력
-# 2. [차순위] 비상이 아니고, 모드가 "Operation"이라면 -> "Normal Operation Continuing..." 출력
-# 3. [그 외] 나머지 경우 -> "System Idle / Maintenance Mode" 출력
+#  - 만약 비상 상황(True)이라면 -> "EMERGENCY STOP! System Halted." 출력
+#  - 비상이 아니고, 모드가 "Operation"이라면 -> "Normal Operation Continuing..." 출력
+#  - 나머지 경우 -> "System Idle / Maintenance Mode" 출력
 
 emergency_status = True
 system_mode = "Operation"
