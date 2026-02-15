@@ -1,20 +1,24 @@
-# 다중 센서 데이터를 분석하여 시스템의 즉각적인 비상 정지를 제어하는 통합 안전 로직을 설계합니다.
-# Design an integrated safety logic to control immediate emergency shutdown by analyzing multi-sensor data.
+# 다중 센서 데이터를 분석하여 시스템의 즉각적인 비상 정지를 제어하는 통합 안전 시스템
+# 화재 감지 센서나 지진 센서가 작동하면, 시스템의 다른 상태와 상관없이 즉시 운영을 중단한다.
 
 # Scenario
-# 전시장 온도(temp)와 연기 감지(smoke_detected) 데이터를 실시간 모니터링할 것.
-# 온도가 50도 이상이거나 연기가 감지되는 경우(하나라도 해당 시), 비상 정지 신호를 발생시킬 것.
-# 모든 조건이 안전 범위 내에 있을 경우에만 시스템 정상 가동 상태를 유지할 것.
+# 비상 상황 여부(emergency_status)를 불리언(True/False) 변수로 설정할 것.
+# 현재 시스템 모드(system_mode)를 문자열 변수로 설정할 것. (예: "Operation", "Maintenance" 등)
+# 함수(check_safety)를 정의할 때, 위 두 값을 전달받을 매개변수(emergency_status, mode)를 괄호 안에 작성할 것.
+# if-elif-else를 사용하여 안전 수칙을 구현할 것.
+# 1. [최우선] 만약 비상 상황(True)이라면 -> "EMERGENCY STOP! System Halted." 출력
+# 2. [차순위] 비상이 아니고, 모드가 "Operation"이라면 -> "Normal Operation Continuing..." 출력
+# 3. [그 외] 나머지 경우 -> "System Idle / Maintenance Mode" 출력
 
-# Monitor gallery temperature and smoke detection data in real-time.
-# Trigger an emergency stop signal if temperature is 50°C or above, OR smoke is detected.
-# Maintain normal operation only when all conditions are within the safety range.
+emergency_status = True
+system_mode = "Operation"
 
-def emergency_safety_system(temp, smoke_detected):
-    if temp >= 50 or smoke_detected:
-        print("emergency_safety_system('EMERGENCY STOP')")
+def check_safety(emergency_status, system_mode):
+    if emergency_status:
+        print("EMERGENCY STOP! System Halted.")
+    elif system_mode == "Operation":
+        print("Normal Operation Continuing...")
     else:
-        print("emergency_safety_system('NORMAL OPERATION')")
+        print("System Idle / Maintenance Mode")
 
-emergency_safety_system(55, False)
-emergency_safety_system(45, True)
+check_safety(emergency_status, system_mode)

@@ -1,15 +1,18 @@
-# 장비 보호를 위한 유효 RGB 색상 신호 검증 및 안전 장치 시스템을 구현합니다.
-# Implement a validation and safety system for RGB color signals to protect hardware equipment.
+# 현재 시스템의 상태(정상, 경고 등)를 입력받아, 그에 맞는 RGB 색상 데이터를 출력한다.
 
 # Scenario
-# 디지털 예술에서 색은 보통 (R, G, B) 세 숫자의 조합으로 표현.
-# 각 값은 0.0에서 1.0 사이. 
-# 만약 어느 하나라도 1.0을 초과하거나 0.0 미만이라면 "Invalid Color"라는 경고를 띄워야 장비 고장을 막을 수 있음.
+# 시스템의 상태를 나타내는 변수(system_status)를 설정할 것.
+# 함수를 정의할 때 상태 값을 전달받을 매개변수(status)를 괄호 안에 작성할 것.
+# if-elif-else를 사용하여 각 상태에 맞는 RGB 튜플(Tuple) 값을 결정하고 출력할 것.
 
-def check_color_signal(r, g, b):
-    if 0.0 <= r <= 1.0 and 0.0 <= g <= 1.0 and 0.0 <= b <= 1.0:
-        print("color_signal : OK")
+system_status = "warning"
+
+def set_rgb_color(status):
+    if status == "normal":
+        print("set_rgb_color((0, 255, 0))")  # 녹색
+    elif status == "warning":
+        print("set_rgb_color((255, 255, 0))")  # 노란색
+    elif status == "error":
+        print("set_rgb_color((255, 0, 0))")  # 빨간색
     else:
-        print("color_signal : Invalid Color ")
-
-check_color_signal(1.0, 0.5, 0.2)
+        print("set_rgb_color((255, 255, 255))")  # 흰색 (알 수 없는 상태)
