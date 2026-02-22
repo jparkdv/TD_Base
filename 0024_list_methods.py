@@ -8,21 +8,30 @@
 # - 리스트가 변할 때마다 결과를 출력하여 변경 사항을 확인함.
 # -------------------------------------------------------
 
-# 1. 초기 플레이리스트 구성
+# 1. 초기 리스트 구성
 playlist = ["Opening", "Midpoint", "Closing"]
-print(f"초기 리스트: {playlist}")
+print(f"1. 초기 상태: {playlist}")
 
 # 2. 맨 뒤에 추가 (append)
-# 💡 리스트의 가장 마지막 칸에 새로운 데이터를 덧붙입니다.
-playlist.append("Encore")
+playlist.append("Encore") # 결과: [..., "Encore"]
 
-# 3. 특정 위치에 삽입 (insert)
-# 💡 insert(인덱스, 데이터): 지정한 위치에 데이터를 끼워 넣고, 뒤의 데이터들은 한 칸씩 밀어냅니다.
-playlist.insert(1, "Intro")  # 두 번째 자리(인덱스 1)에 삽입
+# 3. 특정 위치(인덱스 1)에 삽입 (insert)
+# "Opening"과 "Midpoint" 사이에 "Intro"가 들어갑니다.
+playlist.insert(1, "Intro") 
+print(f"2. 삽입 후: {playlist}")
 
-# 4. 특정 데이터 삭제 (remove)
-# 💡 리스트에서 해당 이름을 가진 첫 번째 데이터를 찾아 삭제합니다.
-playlist.remove("Midpoint")
+# 4. 다양한 삭제 방법 실습
+# (1) 이름으로 삭제 (remove)
+playlist.remove("Midpoint") 
 
-# 5. 최종 결과 출력
-print(f"최종 업데이트 리스트: {playlist}")
+# (2) 위치 번호로 삭제 (del)
+# 현재 인덱스 2에 있는 "Closing"을 삭제합니다.
+del playlist[2] 
+
+# (3) 맨 마지막 데이터 뽑아내기 (pop)
+# 리스트 끝에 있던 "Encore"를 삭제합니다.
+playlist.pop() 
+
+# 5. 최종 결과 확인
+# 모든 공정을 거치고 남은 정예 멤버들만 출력됩니다.
+print(f"3. 최종 상태: {playlist}") # 결과: ['Opening', 'Intro']

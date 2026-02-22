@@ -1,4 +1,4 @@
-# 0001_distance_trigger.py
+# 0001_variable_and_print.py
 # 목적: 관객의 물리적 거리에 반응하는 기초 인터랙션(Interactive) 로직 구현
 # -------------------------------------------------------
 # Scenario:

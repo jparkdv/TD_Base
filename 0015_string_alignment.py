@@ -1,4 +1,4 @@
-# 0015_inventory_sorting_system.py
+# 0015_string_alignment.py
 # 목적: 리스트 정렬(Sort) 및 역순(Reverse) 기능을 활용한 데이터 구조화
 # -------------------------------------------------------
 # Scenario:

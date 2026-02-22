@@ -1,4 +1,4 @@
-# 0016_categorized_hardware_summary.py
+# 0016_escape_characters.py
 # 목적: 다중 리스트 비교 및 조건 필터링을 통한 카테고리별 장비 요약 시스템 구현
 # -------------------------------------------------------
 # Scenario:

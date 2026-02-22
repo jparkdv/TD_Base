@@ -1,4 +1,4 @@
-# 0017_smart_function_with_default_setting.py
+# 0017_function_basics.py
 # 목적: 함수의 매개변수 기본값 설정을 통한 시스템 제어의 유연성 확보
 # -------------------------------------------------------
 # Scenario:
