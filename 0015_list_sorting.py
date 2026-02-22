@@ -1,4 +1,4 @@
-# 0015_string_alignment.py
+# 0015_list_sorting.py (리스트 정렬)
 # 목적: 리스트 정렬(Sort) 및 역순(Reverse) 기능을 활용한 데이터 구조화
 # -------------------------------------------------------
 # Scenario:
@@ -26,5 +26,5 @@ print("Sorted Inventory (A-Z):", my_gear)
 my_gear.reverse()
 print("Reversed Inventory (Z-A):", my_gear)
 
-# 4. 최종 데이터 확정 보고 (Final Verification)
+# 4. 최종 데이터 확정 보고 (Final Verification) 
 print("Inventory organization complete.")
